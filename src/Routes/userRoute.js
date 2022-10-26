@@ -21,7 +21,7 @@ router.post('/create', async function(request, response) {
     sendEmail(requestBody.email, Key)
 
     const uploadSave = await createUser.save()
-    response.send('The Email Was Sent')
+    response.json('The Email Was Sent')
     console.log(`New User Created at ${Date.now()}`) 
     
     return } 
