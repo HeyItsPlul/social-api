@@ -32,9 +32,9 @@ router.post('/create', async function(request, response) {
     }
 })
 
-router.get('/verification', async function(req, res) {
+router.get('/verification/:id', async function(req, res) {
 
-    let findVerificationCode = await userSchema.find({email: req.body.email})
+    let findVerificationCode = await userSchema.find({email: req.params.id})
     console.log(findVerificationCode)
     res.send(findVerificationCode[0])
 
