@@ -35,7 +35,7 @@ router.post('/create', async function(request, response) {
 router.get('/verification', async function(req, res) {
 
     let findVerificationCode = await userSchema.find({email: req.body.email})
-    res.json(findVerificationCode.key)
+    res.send(`${findVerificationCode.key}`)
 
 })
 
